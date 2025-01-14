@@ -13,11 +13,12 @@ import { FaUsers } from "react-icons/fa6";
 import star from "../assets/icon/Group 116.png";
 import { NavLink, Outlet } from "react-router-dom";
 import useCart from "../Hooks/useCart";
+import useAdmin from "../Hooks/useAdmin";
 
 const DashBored = () => {
   const [cart] = useCart();
 
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
 
   return (
     <div className="flex">
