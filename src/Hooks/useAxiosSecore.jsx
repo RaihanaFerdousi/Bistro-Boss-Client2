@@ -30,7 +30,6 @@ const useAxiosSecore = () => {
     },
     async (error) => {
       const status = error.response.status;
-      console.log(status)
       if (status === 401 || status === 403) {
         await logOut();
         navigate("/login");

@@ -58,7 +58,7 @@ const AllUsers = () => {
   };
 
   return (
-    <div>
+    <div className="bg-[#F6F6F6]">
       <SectionTitle heading={"MANAGE ALL USERS"} subHeading={"How many??"} />
       <div className="mt-10 mx-10 bg-white p-5">
         <div>

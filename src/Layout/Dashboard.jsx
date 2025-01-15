@@ -38,7 +38,7 @@ const DashBored = () => {
                   <FaHouse />
                   <span>Admin Home</span>
                 </NavLink>
-                <NavLink className="flex items-center space-x-2 text-black hover:text-white">
+                <NavLink to='/dashboard/addItems' className="flex items-center space-x-2 text-black hover:text-white">
                   <ImSpoonKnife />
                   <span>Add Items</span>
                 </NavLink>
@@ -118,7 +118,7 @@ const DashBored = () => {
           </ul>
         </div>
       </div>
-      <div className="bg-[#F6F6F6] w-full flex-1">
+      <div className="bg-white w-full flex-1">
         <Outlet />
       </div>
     </div>
