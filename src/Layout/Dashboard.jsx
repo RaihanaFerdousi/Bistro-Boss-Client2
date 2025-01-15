@@ -22,7 +22,7 @@ const DashBored = () => {
 
   return (
     <div className="flex">
-      <div className="bg-[#B08448] min-h-full w-64 h-screen p-6 flex flex-col justify-between">
+      <div className="bg-[#B08448] w-64 p-6 flex flex-col justify-between">
         {/* Top Section */}
         <div>
           <NavLink to="/" className="text-black text-[25px] cinzel font-bold">
@@ -31,18 +31,24 @@ const DashBored = () => {
               Restaurant
             </span>
           </NavLink>
-          <ul className="space-y-6 mt-5 cinzel">
+          <ul className="space-y-6 mt-5 cinzel h-[220px]">
             {isAdmin ? (
               <>
                 <NavLink className="flex items-center space-x-2 text-black hover:text-white">
                   <FaHouse />
                   <span>Admin Home</span>
                 </NavLink>
-                <NavLink to='/dashboard/addItems' className="flex items-center space-x-2 text-black hover:text-white">
+                <NavLink
+                  to="/dashboard/addItems"
+                  className="flex items-center space-x-2 text-black hover:text-white"
+                >
                   <ImSpoonKnife />
                   <span>Add Items</span>
                 </NavLink>
-                <NavLink className="flex items-center space-x-2 text-black hover:text-white">
+                <NavLink
+                  to="/dashboard/manageItems"
+                  className="flex items-center space-x-2 text-black hover:text-white"
+                >
                   <TfiMenuAlt />
                   <span>Manage Itmes</span>
                 </NavLink>
@@ -90,33 +96,33 @@ const DashBored = () => {
               </>
             )}
           </ul>
+          <div>
+            <hr className="border-black my-6 " />
+            <ul className="space-y-6">
+              <NavLink className="flex cinzel items-center space-x-2 text-black hover:text-white">
+                <FaHouse />
+                <span>Home</span>
+              </NavLink>
+              <NavLink
+                to="/orderFood/salad"
+                className="flex cinzel items-center space-x-2 text-black hover:text-white"
+              >
+                <IoIosMenu />
+                <span>Menu</span>
+              </NavLink>
+              <NavLink className="flex cinzel items-center space-x-2 text-black hover:text-white">
+                <BsHandbagFill />
+                <span>Shop</span>
+              </NavLink>
+              <NavLink className="flex cinzel items-center space-x-2 text-black hover:text-white">
+                <SlEnvolope />
+                <span>Contact</span>
+              </NavLink>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Section */}
-        <div>
-          <hr className="border-black my-6 " />
-          <ul className="space-y-6">
-            <NavLink className="flex cinzel items-center space-x-2 text-black hover:text-white">
-              <FaHouse />
-              <span>Home</span>
-            </NavLink>
-            <NavLink
-              to="/orderFood/salad"
-              className="flex cinzel items-center space-x-2 text-black hover:text-white"
-            >
-              <IoIosMenu />
-              <span>Menu</span>
-            </NavLink>
-            <NavLink className="flex cinzel items-center space-x-2 text-black hover:text-white">
-              <BsHandbagFill />
-              <span>Shop</span>
-            </NavLink>
-            <NavLink className="flex cinzel items-center space-x-2 text-black hover:text-white">
-              <SlEnvolope />
-              <span>Contact</span>
-            </NavLink>
-          </ul>
-        </div>
       </div>
       <div className="bg-white w-full flex-1">
         <Outlet />
