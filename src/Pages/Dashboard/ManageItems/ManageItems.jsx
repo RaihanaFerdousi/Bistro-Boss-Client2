@@ -4,9 +4,10 @@ import useAxiosSecore from "../../../Hooks/useAxiosSecore";
 import useMenu from "../../../Hooks/useMenu";
 import { GoTrash } from "react-icons/go";
 import { LuFilePenLine } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 const ManageItems = () => {
-  const [menu] = useMenu();
+  const [menu, refetch] = useMenu();
   const axiosSecure = useAxiosSecore();
 
   const handleDeleteItem = async (item) => {
@@ -71,9 +72,11 @@ const ManageItems = () => {
                       <td className="p-4">{item.name}</td>
                       <td className="p-4">{item.price}</td>
                       <td className="p-4">
-                        <button className="btn bg-[#B08448] text-white rounded">
-                          <LuFilePenLine />
-                        </button>
+                        <Link>
+                          <button className="btn bg-[#B08448] text-white rounded">
+                            <LuFilePenLine />
+                          </button>
+                        </Link>
                       </td>
                       <td className="p-4">
                         <button

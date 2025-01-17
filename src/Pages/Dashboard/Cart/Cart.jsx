@@ -3,6 +3,7 @@ import { GoTrash } from "react-icons/go";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../Hooks/useAxiosSecore";
 import SectionTitle from "../../../Components/SectionTitle/SectionTitle";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cart, refetch] = useCart();
@@ -36,7 +37,7 @@ const Cart = () => {
 
   return (
     <div>
-      <SectionTitle heading={'WANNA ADD MORE?'} subHeading={'My Cart'}/>
+      <SectionTitle heading={"WANNA ADD MORE?"} subHeading={"My Cart"} />
       <div className="mt-10 mx-10 bg-white p-5">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl cinzel font-semibold">
@@ -45,7 +46,17 @@ const Cart = () => {
           <h1 className="text-3xl cinzel font-semibold">
             Total Price: ${totalPrice}
           </h1>
-          <button className="text-white cinzel bg-[#D1A054] btn">Pay</button>
+          {cart.length ? (
+            <Link to="/dashboard/payment">
+              <button className="text-white cinzel bg-[#D1A054] btn">
+                Pay
+              </button>
+            </Link>
+          ) : (
+            <button disabled className="text-white cinzel bg-[#D1A054] btn">
+              Pay
+            </button>
+          )}
         </div>
         <div>
           <div className="overflow-x-auto p-4">
